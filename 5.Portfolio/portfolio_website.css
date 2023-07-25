@@ -1,0 +1,632 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.logo-container{
+    display: flex;
+    /* align-items: baseline; */
+    align-items: center;
+}
+.logo{
+    width: 80px;
+}
+.logo-text{
+    margin: -1.4rem;
+}
+.nav-items{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4rem;
+}
+
+.nav-items div{
+    font-size: 20px;
+    font-weight: 200;
+    cursor: pointer;
+    
+}
+.nav-items div a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-items div a:hover{
+    transition: 0.8s;
+    font-weight: bold;
+}
+
+.hero-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* By user's given... */
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+
+.faded-text{
+    user-select: none;
+    font-size: 7rem;
+    color: rgb(231 , 231 , 231);
+
+    /* User's... */
+    bottom: -16%;
+    left: 5%;
+    font-weight: bold;
+    transition: all 3s;
+}
+
+.hero-section-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero-section-heading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+
+.role{
+    color: #4e45d5;
+    font-weight: 800;
+}
+
+.hero-section-subheading{
+    font-size: 45px;
+    /* line-height: 45px; */
+}
+
+.hero-section-description{
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 500;
+}
+
+.btn-pink{
+    position: relative;
+    background-color: #e84949;
+    padding: 1rem 2rem;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 5px 5px 10px black ;
+    z-index: 1;
+    width: 10rem;
+    color: black;
+}
+
+.btn-pink::before{
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 2s;
+    z-index: -1;
+    
+}
+
+.btn-pink:hover::before{
+    transform: scaleX(1);
+}
+
+.hero-section-right{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
+.user-image{
+    padding: 2.5rem;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+}
+.user-image img{
+    width: 300px;
+    height: 350px;
+    z-index: -9;
+}
+
+@keyframes scaleImage{
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+    50%{
+        filter: grayscale(1);
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(0.9);
+        filter: grayscale(0);
+        box-shadow: 3px 3px 10px black;
+    }
+}
+
+.icon-dots{
+    z-index: 9;
+    bottom: -1rem;
+    right: 0;
+    animation-name: dotsAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dotsAnimation{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.icon-cube{
+    z-index: 9;
+    top: 1rem;
+    right: 1em;
+    animation-name: cubeRotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cubeRotate {
+    0%{
+        transform: rotateY(0deg) translateY(0px);
+    }
+
+    50%{
+        transform: rotateY(180deg) translateY(-12px);
+    }
+
+    100%{
+        transform: rotateY(360deg) translateY(0px);
+    }
+}
+
+.icon-circle{
+    z-index: 9;
+    left: 0;
+    bottom: 0;
+
+    animation-name: shakeEffect;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shakeEffect{
+    50%{
+        left: 5%;
+        bottom: 10%;
+    }
+}
+
+.icon-zigzag{
+    z-index: 9;
+    top: 1.5rem;
+    left: -0.3rem;
+
+    animation: zigzagAnimation 3s ease-in infinite;
+}
+
+@keyframes zigzagAnimation{  
+    50%{
+        top: 5%;
+        left: 2%;
+    }
+}
+
+.icon-plus{
+    z-index: 9;
+    top: 1.5rem;
+    left: 50%;
+
+    animation: shakeEffectPlus 3s ease-in infinite;
+}
+
+@keyframes shakeEffectPlus{
+    50%{
+        top: 3%;
+        left: 48%;
+    }
+}
+
+/* Project Section... */
+.project-section{
+    background-color: rgb(231 , 231 , 231);
+    margin-top: 4rem;
+}
+
+.page-header{
+    color: red;
+    text-align: center;
+    font-size: 70px;
+    padding-top: 30px;
+}
+
+.project-container{
+    width: 1200px;
+    margin: 0 auto;
+    padding : 3rem 0 ;
+
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.project-card{
+    position: relative;
+    width: 90%;
+    height: 550px;
+    background-image: url("portfolio images/Project2.png");
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    box-shadow: 0px 0px 40px #1f1f1f;
+}
+
+.project-card::after{
+    content: "";
+    position: absolute;
+    /* For fully covering an image top bottom left right all set to zero... */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #1f1f1f9a;
+    z-index: 0;
+}
+
+.project-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(45deg , #343d68 , #343d68be , #343d687c);
+    /*  Starting m ye nhii chahiye isliye....transform scaleX is 0 or we can use opacity not in this condition but in similar condition...*/
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s;
+    z-index: 1;
+}
+
+.project-card:hover::before{
+    transform: scaleX(1);
+}
+
+.project-number{
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color: white;
+    z-index: 10;
+    display: none;
+    /* opacity: 0; */
+}
+
+.project-card:hover .project-number{
+    display: block;
+    /* opacity: 1; */
+}
+
+.project-number-right{
+    right: -40px;
+    top: -45px;
+}
+
+.project-number-left{
+    left: -40px;
+    top: -45px;
+}
+
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+
+    /* Both are used for overlapping the text or an image... */
+    bottom: 20%;
+    z-index: 5;
+    gap: 1em;
+    transition: all 0.4s;
+}
+
+.project-card:hover .project-content{
+    transform: scale(1.08);
+}
+
+/* .project-content-right{
+    right: 10%;
+} */
+
+.project-content-left{
+    left: 10%;
+}
+
+.project-skill-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-skill{
+    width: 40px;
+}
+
+.project-heading{
+    font-size: 32px;
+    font-weight: 600;
+}
+.project-subheading{
+    width: 60%;
+    font-style: italic;
+}
+
+.btn-grp{
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+.icon{
+    cursor: pointer;
+    color: white;
+}
+.icon:hover{
+    color: red;
+    transition: all 1s;
+}
+
+#project1{
+    background-image: url("portfolio images/Project1.png");
+}
+
+#project2{
+    margin-left: 120px;
+    background-image: url("portfolio images/Project2.png");
+}
+
+#project3{
+    background-image: url("portfolio images/Project3.png");
+}
+
+#project4{
+    /* Project card is of 90% of 1200px width...so remaining widht is 120px i.e 10% */
+    margin-left: 120px;
+    background-image: url("portfolio images/Project4.png");
+}
+
+.skills-container{
+    position: relative;
+    display: flex;
+    padding: 5rem;
+    margin: 10rem auto;
+    gap: 30px;
+}
+
+.skill-faded-text{
+    font-size: 15rem;
+    font-style: bold;
+    color: rgb(231 , 231 , 231);
+    user-select: none;
+    position: absolute;
+    bottom: -35%;
+    right: 0;
+    /* overflow-y: hidden; */
+}
+
+.skill-container-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-container-right{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.blob-style{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    animation: blobAnimate 10s linear infinite;
+    z-index: -5;
+}
+
+@keyframes blobAnimate {
+    50%{
+        top: 20%;
+        left: 40%;
+    }
+}
+
+.skill-logo{
+    width: 70px;
+    transition: all 0.5s;
+}
+
+.skill-logo:hover{
+    transform: scale(1.2);
+}
+
+.skill-heading{
+    font-size: 50px;
+    font-style: bold;
+    color: red;
+    line-height: 50px;
+}
+
+.caps{
+    font-size: 90px;
+}
+
+.skill-subheading{
+    margin-top: 1rem;
+    width: 85%;
+    text-align: justify;
+}
+
+.skill-subheading p{
+    margin: 15px 0;
+}
+
+/* Contact us */
+.contact-us-container{
+    width: 100%;
+    background-color: rgb(231 , 231 , 231);
+}
+
+.contact-us-heading{
+    font-size: 4em;
+    color: red;
+    padding-top: 2rem;
+}
+
+.contact-us-subheading{
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.contact-form-container{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    margin: 2rem 5rem;
+}
+
+.form-field-container{
+    width: 100%;
+}
+
+.formfield{
+    width: 100%;
+    height: 42px;
+    padding: 0 2rem;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 2px 2px 10px black;
+    border: none;
+    margin: 15px;
+}
+
+.formfield-textarea{
+    height: auto;
+    padding-top: 1rem;
+}
+
+#submit-btn{
+    border: none;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    width: 18rem;
+}
+
+#submit-btn:hover{
+    scale: 0.9;
+}
+
+.submit-icon{
+    padding: 0 1rem;
+    /* font-size: 1.5rem; */
+}
+
+footer{
+    position: relative;
+    margin-top: 1px;
+    background-color: #343d68;
+    padding: 5rem;
+}
+
+.footer-wrapper{
+    display: flex;
+    gap: 1rem;
+    padding-right: 8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-faded-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #535c87;
+    user-select: none;
+    font-size: 3em;
+}
+
+.footer-link-wrapper div{
+    display: flex;
+    gap: 2rem;
+}
+.footer-link-wrapper div a{
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    transition: all 0.6s ;
+}
+
+.footer-link-wrapper div a:hover{
+    color: red;
+    transform: scale(1.2);
+}
+.icon{
+    color: white;
+    margin: 0.5rem;
+}
+.icon-wrapper .icon:hover{
+    transform: scale(1.2);
+    color: red;
+}
